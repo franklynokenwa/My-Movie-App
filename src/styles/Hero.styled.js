@@ -19,6 +19,24 @@ const StyledHero = styled.section`
         line-height: 94px;
     }
 
+    @media only screen and (max-width: 768px){
+            h2{
+                margin:0 auto;
+                text-align:center;
+                
+            }
+        }
+
+    @media only screen and (max-width: 480px){
+            h2{
+                margin: 0 auto;   
+                text-align:center ;
+                font-size: 38px;
+                width: 320px;
+                height: 200px;
+            }
+        }
+
     
 `
 

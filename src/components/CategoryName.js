@@ -1,11 +1,10 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import StyledCategoryName from '../styles/CategoryName.styled';
 import dataContext from './DataContext';
 
 
 const CategoryName = () => {
   const apiData = useContext(dataContext) || []
-  const [category, setcategory] = useState('')
   const categoryContainer =[]
   let mostFrequentCategory = "";
 

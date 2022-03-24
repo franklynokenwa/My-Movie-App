@@ -1,10 +1,9 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import StyledMovies from '../styles/Movies.styled'
 import dataContext from './DataContext'
 
 const Movies = () => {
   const apiData = useContext(dataContext) || []
-  const [category] = useState('')
   console.log(apiData);
   const a =[]
  

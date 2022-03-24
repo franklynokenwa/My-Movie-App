@@ -20,20 +20,20 @@ const StyledNavBar = styled.section`
     @media only screen and (max-width: 768px){
             h1{
                 margin:0 200px;
-                text-align:center;                
+                text-align:center;    
             }
         }
 
     @media only screen and (max-width: 480px){
             h1{
-                margin-left: 64px; 
+                margin-left: 88px; 
                 font-size: 20px;
                 width: 108px;
             }
         }
     @media only screen and (max-width: 375px){
             h1{
-                margin-left: 11px; 
+                margin-left: 30px; 
                 font-size: 20px;
             }
         }
