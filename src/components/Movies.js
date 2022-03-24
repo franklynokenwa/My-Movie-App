@@ -4,17 +4,15 @@ import dataContext from './DataContext'
 
 const Movies = () => {
   const apiData = useContext(dataContext) || []
-  const [category, setcategory] = useState('')
+  const [category] = useState('')
   console.log(apiData);
   const a =[]
  
   return (
     apiData.map((item,index) => {
-      const {Title, imdbID, Poster, Type} = item
+      const {Title, Type} = item
       console.log(Type);
       a.push(Type)
-      console.log(a);
-      console.log(category);
      
       return(
         <StyledMovies key={index}>
@@ -26,15 +24,3 @@ const Movies = () => {
 }
 
 export default Movies
-
-/*
-apiData.Search.map((item) => {
-      const {Title} = item;
-      return(
-        <p>{Title}</p>
-      )
-    })
-    width: 300px;
-    height: 300px;
-
-*/

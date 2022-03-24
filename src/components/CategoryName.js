@@ -1,58 +1,51 @@
 import React, {useContext, useState} from 'react'
+import StyledCategoryName from '../styles/CategoryName.styled';
 import dataContext from './DataContext';
 
 
 const CategoryName = () => {
   const apiData = useContext(dataContext) || []
   const [category, setcategory] = useState('')
-  console.log(apiData);
-  const a =[]
-  let mostFreq = "";
+  const categoryContainer =[]
+  let mostFrequentCategory = "";
 
-    function findMostFrequent(arr) {
+
+// The below function is used to get the category className
+
+    function findMostFrequentCategory(array) {
     let compare = "";
     
     
-    arr.reduce((acc, val) => {
-      if(val in acc){               // if key already exists
-         acc[val]++;                // then increment it by 1
+    array.reduce((acc, val) => {
+      if(val in acc){           
+         acc[val]++;       
       }else{
-         acc[val] = 1;      // or else create a key with value 1
+         acc[val] = 1;     
       }
-      if(acc[val] > compare){   // if value of that key is greater
-                                // than the compare value.
-         compare = acc[val];    // than make it a new compare value.
-         mostFreq = val;        // also make that key most frequent.
+      if(acc[val] > compare){   
+                                
+         compare = acc[val];    
+         mostFrequentCategory = val;
       }
       return acc;
     }, {})
-    console.log("Most Frequent Item is:", mostFreq);
 
 }
 
-  apiData.map((item,index) => {
+  apiData.map((item) => {
     const {Type} = item
-    console.log(Type);
-    a.push(Type)
-    console.log(a);
-    // findMostFrequent(a);
-    findMostFrequent(a)
-    console.log('good');
-    console.log(mostFreq);
+    categoryContainer.push(Type)
+    findMostFrequentCategory(categoryContainer)
    
-    return mostFreq
+    return mostFrequentCategory
   })
 
   return (
-    <div>
-      <p>{mostFreq}</p>
-    </div>
+    <StyledCategoryName>
+      <p>{mostFrequentCategory}</p>
+    </StyledCategoryName>
    
   )
 }
-
-    // <div>
-    //   <p>Movie Category Name</p>
-    // </div>
 
 export default CategoryName

@@ -3,8 +3,6 @@ import StyledMoviesContainer from '../styles/MoviesContainer.styled'
 import Movies from './Movies'
 import CategoryName from './CategoryName'
 
-
-
 const MoviesContainer = () => {
   return (
     <StyledMoviesContainer>

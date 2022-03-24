@@ -8,6 +8,9 @@ const StyledSearchBar = styled.section`
             font-size: 24px;
             border: 1px solid #000000;
         }
+        p{
+            font-size: 24px;
+        }
         
 `
 

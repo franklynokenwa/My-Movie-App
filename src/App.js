@@ -12,21 +12,17 @@ import CategoryName from '../src/components/CategoryName'
 
 function App() {
 
-  const ApiKey = '92b167ed'
   const [data, setData] = useState([])
   const [searchValue, setSearchValue] = useState('')
 
   const getUserData = async (searchValue) => {
-   await axios.get(`https://www.omdbapi.com/?s=${searchValue}&apikey=${ApiKey}`)
+   await axios.get(`https://www.omdbapi.com/?s=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}`)
    .then(
      response => {
-       console.log(response.data.Search);
        setData(response.data.Search)
-       console.log(response.data.Search)
      }
    )
   }
-
 
   useEffect(() => {
     getUserData(searchValue);
